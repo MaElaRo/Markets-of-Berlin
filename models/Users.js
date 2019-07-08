@@ -13,7 +13,7 @@ const userSchema = new Schema({
   },
   usertype: {
     type: String,
-    enum: ["Admin", "User", "LocalHost"],
+    enum: ["Admin", "User"],
     default: "User"
   }
 });

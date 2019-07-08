@@ -7,26 +7,45 @@ const marketSchema = new Schema({
   type:String,
   required: true,
 },
-img:
-,
+img:{
+  type:String,
+  default:
+},
+
 markettype:{
   type:String,
   enum:["Farmers market", "Covered market", "Street-Food-Market", "Flea Market"]
 },
-address:{
-  type:String,
-  required:true,
+location: {
+  type: {
+    type: String,
+    enum: ["Point"],
+    default: "Point"
+  },
+  coordinates: {
+    type: [Number],
+    required: true
+  }
 },
 description:String,
 keywords:{
-  type:String,
-  enum:[...],
+  type:[String]
 },
-day:{
-  type:String,
-  enum:["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-},
-openingHours:Number,
+ openingTime:
+  [
+    {
+      day:
+      {type:String,
+        enum:["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+      },
+      openingHours:Number,
+      closingHours:Number
+    }
+  ]
+  
+
+
 });
 
 const Market= mongoose.model("Market", marketSchema)
+
