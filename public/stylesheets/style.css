@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#logo {
+  width: 3.5rem;
+  height: auto;
+}
+
+.navbar {
+  background-color: #343A40;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 20px;
+
+}
+
+.logo-search{
+display: flex;
+width: 40%;
+justify-content: space-between;
+}
+.searchform {
+  align-self: center;
+}
+.searchbar {
+  width: 400px;
+  height: 30px;
+  font-size: 17px;
+  padding: 2px;
+  border-radius:10px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+  width: 16%;
+}
+
+.btn-log-in {
+	background-color:#f6d932;
+	-moz-border-radius:28px;
+	-webkit-border-radius:28px;
+	border-radius:28px;
+	border:1px solid #dbc12c;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:10px 20px;
+	text-decoration:none;
+}
+.btn-log-in:hover {
+  background-color:#ebcc1d;
+  text-decoration: none;
+  color: white;
+}
+.btn-log-in:active {
+	position:relative;
+	top:1px;
+}
+
+.btn-sign-up {
+	background-color:#4FA9D2;
+	-moz-border-radius:28px;
+	-webkit-border-radius:28px;
+	border-radius:28px;
+	border:1px solid #3c819e;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:10px 20px;
+	text-decoration:none;
+}
+.btn-sign-up:hover {
+  background-color:#428dad;
+  text-decoration: none;
+  color: white;
+}
+.btn-sign-up:active {
+	position:relative;
+	top:1px;
+}
+
+.footer {
+background-color: #343A40;
+height: 30px;
+}
+
+.footer p {
+color: white;
+text-align: center;
+font-size: 10px;
+padding-top: 5px;
+}
+
+.footer p a {
+  color: white;
+  text-decoration: none;
+}
+
+
+/* body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+
+a {
+  color: #00B7FF; } */
+
+/*# sourceMappingURL=style.css.map */

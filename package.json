@@ -20,5 +20,18 @@
   },
   "devDependencies": {
     "nodemon": "^1.12.1"
-  }
+  },
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaElaRo/Markets-of-Berlin.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MaElaRo/Markets-of-Berlin/issues"
+  },
+  "homepage": "https://github.com/MaElaRo/Markets-of-Berlin#readme",
+  "description": ""
 }

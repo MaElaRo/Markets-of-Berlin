@@ -1,2 +1,13 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+
+<div id='map' style='width: auto; height: 86vh'></div>
+
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiYW5nbWluc2hlbmciLCJhIjoiY2pydDhjMjlwMXhpaDN5cHMxcjNya2ZmbyJ9.Tc5kmo0vZ1VKJbLK83OloA';
+var map = new mapboxgl.Map({
+container: 'map',
+style: 'mapbox://styles/mapbox/light-v10',
+center: [13.405, 52.52],
+zoom: 11.15,
+});
+map.addControl(new mapboxgl.NavigationControl());
+</script>
