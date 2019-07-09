@@ -36,6 +36,7 @@
       // add marker to map
       new mapboxgl.Marker(el)
         .setLngLat(market.coordinates)
+        .setPopup(popup)
         .addTo(map);
     })
   }).catch(err => {

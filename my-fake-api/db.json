@@ -2,7 +2,7 @@
   "markets":[
      {
       "marketname": "Flea Market at Boxhagener Platz",
-      "img": "../public/images/fleamarket-photo.jpg",
+      "img": "/images/fleamarket-photo.jpg",
       "markettype": "Flea Market",
       "coordinates": [13.459593, 52.510789],
       "description":"Every Sunday Boxhagener Platz near the popular tourist and party hotspot Simon-Dach-Straße turns into a hunting ground for treasure seekers. While during the week merchants sell vegetables and fruits, on Sunday private and professional vendors bring up their sales booths and open the flea market.",
@@ -18,7 +18,7 @@
 
      {
       "marketname": "Markthalle Neun",
-      "img": "../public/images/markthalle-photo",
+      "img": "/images/markthalle-photo.jpg",
       "markettype": "Covered Market",
         "coordinates": [13.43186, 52.50202],
       "description":"Indoor market with international food vendors & shops, plus occasional community events.",
@@ -59,7 +59,7 @@
 
      {
       "marketname": "Street Food in Kulturbrauerei",
-      "img": "../public/images/streetfoodmarket-photo",
+      "img": "/images/streetfoodmarket_photo.jpg",
       "markettype": "Street-Food Market",
       "coordinates": [13.4119949, 52.5402858],
       "description":"Sunday afternoon outdoor market showcasing rotating food trucks & street-food stands.",
@@ -75,7 +75,7 @@
 
      {
       "marketname": "Weekly market at Spittelmarkt",
-      "img": "../public/images/farmersmarket-photo.jpg",
+      "img": "/images/farmersmarket_photo.jpg",
       "markettype": "Farmers Market",
         "coordinates": [13.459678, 52.51500],
       "description":"Every Sunday Boxhagener Platz near the popular tourist and party hotspot Simon-Dach-Straße turns into a hunting ground for treasure seekers. While during the week merchants sell vegetables and fruits, on Sunday private and professional vendors bring up their sales booths and open the flea market.",
