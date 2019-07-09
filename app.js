@@ -57,4 +57,6 @@ app.locals.title = "Markets of Berlin";
 const index = require("./routes/index");
 app.use("/", index);
 
+app.use("/", require("./routes/auth"));
+
 module.exports = app;
