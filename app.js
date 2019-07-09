@@ -34,6 +34,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 // Express View engine setup
+hbs.registerHelper("JSON", content => {
+  return JSON.stringify(content);
+});
 
 app.use(
   require("node-sass-middleware")({

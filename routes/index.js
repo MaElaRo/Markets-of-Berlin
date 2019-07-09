@@ -1,22 +1,28 @@
-const express = require('express');
-const router  = express.Router();
+const express = require("express");
+const router = express.Router();
 const mongoose = require("mongoose");
-const Market = require ("../models/Markets");
+const Market = require("../models/Markets");
 
 /* GET home page */
-router.get('/', (req, res, next) => {
-  res.render('index');
-});
-
-router.get('/markets-of-berlin', (req, res, next) => {
+router.get("/", (req, res, next) => {
   Market.find({})
-    .then(marks => {
-      res.render("test", { markets: marks });
+    .then(markets => {
+      res.render("index", { markets });
     })
     .catch(error => {
-      console.log(error)
-    })
+      console.log(error);
+    });
 });
+
+// router.get('/markets-of-berlin', (req, res, next) => {
+//   Market.find({})
+//     .then(marks => {
+//       res.render("test", { markets: marks });
+//     })
+//     .catch(error => {
+//       console.log(error)
+//     })
+// });
 
 // router.get('/api/markets', (req, res, next) => {
 //   Place.find({}).then(markets=>{
@@ -25,5 +31,3 @@ router.get('/markets-of-berlin', (req, res, next) => {
 // })
 
 module.exports = router;
-
-

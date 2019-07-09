@@ -9,21 +9,25 @@ const marketSchema = new Schema({
   market: {
     type: Object,
     set: ({ marketType, marketImg }) => {
-      if (!marketImg)
-        switch (marketType) {
-          case "Farmers Market":
-            marketImg = "/images/farmersmarket_photo.jpg";
-            break;
-          case "Covered Market":
-            marketImg = "/images/markthalle-photo.jpg";
-            break;
-          case "Street-Food-Market":
-            marketImg = "/images/streetfoodmarket_photo.jpg";
-            break;
-          case "Flea Market":
-            marketImg = "/images/fleamarket-photo.jpg";
-            break;
-        }
+      console.log(marketType);
+      switch (marketType) {
+        case "Farmers market":
+          marketImg = "/images/farmersmarket_photo.jpg";
+          break;
+        case "Covered market":
+          marketImg = "/images/markthalle-photo.jpg";
+          break;
+        case "Street-Food-Market":
+          marketImg = "/images/streetfoodmarket_photo.jpg";
+          break;
+        case "Flea market":
+          marketImg = "/images/fleamarket-photo.jpg";
+          break;
+        default:
+          marketImg = "/images/markthalle-photo.jpg";
+          break;
+      }
+      console.log(marketImg);
       return {
         marketType,
         marketImg

@@ -13,8 +13,6 @@ function filterWithoutCoordinates(data) {
 
 const arr0 = filterWithoutCoordinates(data);
 
-// console.log(arr0);
-
 let coordinates = [];
 
 function filterMarkets(data) {
@@ -71,20 +69,7 @@ function filterMarkets(data) {
               ? "Flea market"
               : obj.location.includes("Markthalle")
               ? "Covered market"
-              : 0,
-          marketImg: {
-            marketType:
-            obj.location.includes("Wochenmarkt") ||
-            obj.location.includes("Wochenmärkte") ||
-            obj.location.includes("Ökomarkt")
-              ? "Farmers market"
-              : obj.location.includes("Trödelmarkt") ||
-                obj.location.includes("Flohmarkt")
-              ? "Flea market"
-              : obj.location.includes("Markthalle")
-              ? "Covered market"
-              : 0,
-          },
+              : "Covered market"
         },
         location: {
           coordinates: [
@@ -105,8 +90,6 @@ const fixedMarkets = filterMarkets(data).filter(
 Markets.deleteMany()
   .then(() => {
     Markets.insertMany(fixedMarkets).then(data => {
-      console.log(data);
-
       mongoose.connection.close();
     });
   })
