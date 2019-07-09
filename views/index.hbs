@@ -11,6 +11,7 @@
     zoom: 11.15,
   });
 
+<<<<<<< HEAD
   // from Alican
   const markets = {{{ JSON markets }}}
   markets.forEach(market => {
@@ -24,9 +25,44 @@
     el.style.height = '47px';
     let marker = new mapboxgl.Marker(el)
       .setLngLat(market.location.coordinates.reverse())
+=======
+   
+  // from Alican
+
+  const markets = {{{ JSON markets }}}
+  markets.forEach(market => {
+    let popup = new mapboxgl.Popup({ offset: 0, className: 'my-class' })
+      .setHTML(`<div class="popup"><p>${market.marketname}</p><p>${market.description}</p><img src="${market.market.marketImg}" alt=""></div>`)
+      .setMaxWidth("none")
+
+      var el = document.createElement('div');
+      el.className = 'marker';
+      el.style.backgroundImage = `url(/images/${market.market.marketType.toLowerCase().replace(" ","")}.png)`
+      el.style.width = '50px';
+      el.style.height = '47px';
+
+    let marker = new mapboxgl.Marker()
+      .setLngLat(market.location.coordinates)
+>>>>>>> f24408f4de4b58a1ba15e5ad425f04a5ac51e08d
       .setPopup(popup)
       .addTo(map)
   })
 
+<<<<<<< HEAD
+=======
+  
+  
+  </script>
+
+  // adding controls to the map
+
+ 
+
+</body>
+
+</html>
+
+
+>>>>>>> f24408f4de4b58a1ba15e5ad425f04a5ac51e08d
 
 </script>
