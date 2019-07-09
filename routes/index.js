@@ -23,6 +23,17 @@ router.get("/", (req, res, next) => {
     });
 });
 
+const loginCheck = () => {
+  return (req, res, next) => {
+    if (req.session.user) next();
+    else res.redirect("/login");
+  };
+};
+
+router.get("/secret", loginCheck(), (req, res) => {
+  res.render("secret");
+});
+
 // router.get('/markets-of-berlin', (req, res, next) => {
 //   Market.find({})
 //     .then(marks => {
