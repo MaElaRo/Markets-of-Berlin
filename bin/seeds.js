@@ -65,13 +65,26 @@ function filterMarkets(data) {
             obj.location.includes("Wochenmarkt") ||
             obj.location.includes("Wochenmärkte") ||
             obj.location.includes("Ökomarkt")
-              ? "farmers market"
+              ? "Farmers market"
               : obj.location.includes("Trödelmarkt") ||
                 obj.location.includes("Flohmarkt")
-              ? "flea market"
+              ? "Flea market"
               : obj.location.includes("Markthalle")
-              ? "covered market"
-              : 0
+              ? "Covered market"
+              : 0,
+          marketImg: {
+            marketType:
+            obj.location.includes("Wochenmarkt") ||
+            obj.location.includes("Wochenmärkte") ||
+            obj.location.includes("Ökomarkt")
+              ? "Farmers market"
+              : obj.location.includes("Trödelmarkt") ||
+                obj.location.includes("Flohmarkt")
+              ? "Flea market"
+              : obj.location.includes("Markthalle")
+              ? "Covered market"
+              : 0,
+          },
         },
         location: {
           coordinates: [

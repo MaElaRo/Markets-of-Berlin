@@ -12,16 +12,16 @@ const marketSchema = new Schema({
       if (!marketImg)
         switch (marketType) {
           case "Farmers Market":
-            marketImg = "";
+            marketImg = "/images/farmersmarket_photo.jpg";
             break;
           case "Covered Market":
-            marketImg = "";
+            marketImg = "/images/markthalle-photo.jpg";
             break;
           case "Street-Food-Market":
-            marketImg = "";
+            marketImg = "/images/streetfoodmarket_photo.jpg";
             break;
           case "Flea Market":
-            marketImg = "";
+            marketImg = "/images/fleamarket-photo.jpg";
             break;
         }
       return {
