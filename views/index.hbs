@@ -2,7 +2,13 @@
 
 
 <script>
+  //delete markers, create new markers
+  document.getElementById("search-markets").onclick = () => {
+    const query = document.querySelector(".searchbar").value;
+
+  }
   //initial map settings
+
   mapboxgl.accessToken = 'pk.eyJ1IjoiYW5nbWluc2hlbmciLCJhIjoiY2pydDhjMjlwMXhpaDN5cHMxcjNya2ZmbyJ9.Tc5kmo0vZ1VKJbLK83OloA';
   var map = new mapboxgl.Map({
     container: 'map',
@@ -11,7 +17,7 @@
     zoom: 11.15,
   });
 
-  // from Alican
+  // from Alican, between forEach and markets filter, filter markets by name, compare with the value of the form
   const markets = {{{ JSON markets }}}
   markets.forEach(market => {
     let popup = new mapboxgl.Popup({ offset: 0, className: 'my-class' })
@@ -27,6 +33,8 @@
       .setPopup(popup)
       .addTo(map)
   })
+
+
 
 
 </script>
