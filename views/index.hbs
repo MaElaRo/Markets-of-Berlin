@@ -30,21 +30,17 @@
 
 
   document.getElementById("searchbar").onclick = () => {
-    const query = document.getElementById("movie-input").value;
+    const query = document.getElementById("search-markets").value;
+    const url = "http://localhost:3000"
 
-    fetch(url)
-      .then(response => {
-        return response.json();
-      })
     axios
       .get(url)
       .then(response => {
-        const { Title, Plot, Actors } = response.data;
-        if (!Title) return;
+        const { Market } = response.data;
+        if (!Market) return;
 
-        document.getElementById("movie-title").innerText = Title;
-        document.getElementById("movie-plot").innerText = Plot;
-        document.getElementById("movie-cast").innerText = Actors;
+        document.getElementById("marketname").innerText = Market;
+
       })
       .catch(err => {
         console.log(err);
