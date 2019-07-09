@@ -21,8 +21,8 @@ const loginCheck = () => {
   };
 };
 
-router.get("/secret", loginCheck(), (req, res) => {
-  res.render("secret");
+router.get("/addmarket", loginCheck(), (req, res) => {
+  res.render("addmarket");
 });
 
 // router.get('/markets-of-berlin', (req, res, next) => {
