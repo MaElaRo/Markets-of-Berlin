@@ -9,7 +9,7 @@ const marketSchema = new Schema({
 },
 img:{
   type:String,
-  default:
+  default:String
 },
 
 markettype:{

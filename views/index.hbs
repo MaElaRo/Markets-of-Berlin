@@ -1,13 +1,57 @@
-
 <div id='map' style='width: auto; height: 86vh'></div>
 
+  <style>
+
+  </style>
 <script>
-mapboxgl.accessToken = 'pk.eyJ1IjoiYW5nbWluc2hlbmciLCJhIjoiY2pydDhjMjlwMXhpaDN5cHMxcjNya2ZmbyJ9.Tc5kmo0vZ1VKJbLK83OloA';
-var map = new mapboxgl.Map({
-container: 'map',
-style: 'mapbox://styles/mapbox/light-v10',
-center: [13.405, 52.52],
-zoom: 11.15,
-});
-map.addControl(new mapboxgl.NavigationControl());
+  //initial map settings
+  mapboxgl.accessToken = 'pk.eyJ1IjoiYW5nbWluc2hlbmciLCJhIjoiY2pydDhjMjlwMXhpaDN5cHMxcjNya2ZmbyJ9.Tc5kmo0vZ1VKJbLK83OloA';
+  var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/light-v10',
+    center: [13.405, 52.52],
+    zoom: 11.15,
+  });
+
+
+  //adding icons
+
+  axios.get('http://localhost:8000/markets').then(response => {
+    console.log("oke", response.data)
+    const markets = response.data;
+
+
+    markets.forEach(market => {
+      const coordinates = market.coordinates;
+      let popup = new mapboxgl.Popup({ offset: 0, className: 'my-class' })
+        .setHTML(`<div class="popup"><p>${market.marketname}</p><img height="50px" src="${market.img}" alt=""></div>`)
+        .setMaxWidth("none")
+
+     var el = document.createElement('div');
+      el.className = 'marker';
+      el.style.backgroundImage = `url(/images/${market.markettype.toLowerCase().replace(" ","")}.png)`
+      el.style.width = '50px';
+      el.style.height = '47px';
+
+      // add marker to map
+      new mapboxgl.Marker(el)
+        .setLngLat(market.coordinates)
+        .addTo(map);
+    })
+  }).catch(err => {
+    console.log(err)
+  })
+
+  // adding controls to the map
+
+  map.addControl(new mapboxgl.NavigationControl());
+
+</script>
+
+</body>
+
+</html>
+
+
+
 </script>

@@ -1,0 +1,98 @@
+{
+  "markets":[
+     {
+      "marketname": "Flea Market at Boxhagener Platz",
+      "img": "../public/images/fleamarket-photo.jpg",
+      "markettype": "Flea Market",
+      "coordinates": [13.459593, 52.510789],
+      "description":"Every Sunday Boxhagener Platz near the popular tourist and party hotspot Simon-Dach-Straße turns into a hunting ground for treasure seekers. While during the week merchants sell vegetables and fruits, on Sunday private and professional vendors bring up their sales booths and open the flea market.",
+      "keywords":["clothes", "furniture", "cafe"],
+       "openingTime": [
+          {
+            "day": "Sunday",
+            "openingHours": 9.00,
+            "closingHours": 15.30
+          }
+        ]
+     },
+
+     {
+      "marketname": "Markthalle Neun",
+      "img": "../public/images/markthalle-photo",
+      "markettype": "Covered Market",
+        "coordinates": [13.43186, 52.50202],
+      "description":"Indoor market with international food vendors & shops, plus occasional community events.",
+      "keywords":["dairy", "dinner", "hipster"],
+       "openingTime": [
+          {
+            "day": "Monday",
+            "openingHours": 12.00,
+            "closingHours": 18.00
+          },
+          {
+            "day": "Tuesday",
+            "openingHours": 12.00,
+            "closingHours": 18.00
+          },
+          {
+            "day": "Wednesday",
+            "openingHours": 12.00,
+            "closingHours": 18.00
+          },
+          {
+            "day": "Thursday",
+            "openingHours": 12.00,
+            "closingHours": 22.00
+          },
+          {
+            "day": "Friday",
+            "openingHours": 12.00,
+            "closingHours": 18.00
+          },
+          {
+            "day": "Samstag",
+            "openingHours": 10.00,
+            "closingHours": 18.00
+          }
+        ]
+     },
+
+     {
+      "marketname": "Street Food in Kulturbrauerei",
+      "img": "../public/images/streetfoodmarket-photo",
+      "markettype": "Street-Food Market",
+      "coordinates": [13.4119949, 52.5402858],
+      "description":"Sunday afternoon outdoor market showcasing rotating food trucks & street-food stands.",
+      "keywords":["food tracks", "dinner"],
+       "openingTime": [
+          {
+            "day": "Sunday",
+            "openingHours": 12.00,
+            "closingHours": 18.00
+          }
+        ]
+     },
+
+     {
+      "marketname": "Weekly market at Spittelmarkt",
+      "img": "../public/images/farmersmarket-photo.jpg",
+      "markettype": "Farmers Market",
+        "coordinates": [13.459678, 52.51500],
+      "description":"Every Sunday Boxhagener Platz near the popular tourist and party hotspot Simon-Dach-Straße turns into a hunting ground for treasure seekers. While during the week merchants sell vegetables and fruits, on Sunday private and professional vendors bring up their sales booths and open the flea market.",
+      "keywords":["vegetables", "dairy"],
+       "openingTime": [
+          {
+            "day": "Wednesday",
+            "openingHours": 10.00,
+            "closingHours": 15.00
+          },
+          {
+            "day": "Friday",
+            "openingHours": 10.00,
+            "closingHours": 15.00
+          }
+        ]
+     }
+     
+  ]
+}
