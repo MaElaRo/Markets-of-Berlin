@@ -10,7 +10,6 @@ geo.setAccessToken('pk.eyJ1IjoiYW5nbWluc2hlbmciLCJhIjoiY2pydDhjMjlwMXhpaDN5cHMxc
 router.get("/", (req, res, next) => {
   Market.find({})
     .then(markets => {
-      console.log(markets[markets.length - 1])
       res.render("index", { markets });
     })
     .catch(error => {
@@ -75,8 +74,8 @@ router.post("/addmarket", (req, res, next) => {
     keywords,
     openingTime: opTime
   })
-    .then(() => {
-      res.redirect("/");
+    .then((obj) => {
+      res.redirect(`/market/${obj._id}`);
     })
     .catch(err => {
       console.log("Error while adding a market: ", err);
@@ -84,20 +83,14 @@ router.post("/addmarket", (req, res, next) => {
   });
 });
 
-// router.get('/markets-of-berlin', (req, res, next) => {
-//   Market.find({})
-//     .then(marks => {
-//       res.render("test", { markets: marks });
-//     })
-//     .catch(error => {
-//       console.log(error)
-//     })
-// });
-
-// router.get('/api/markets', (req, res, next) => {
-//   Place.find({}).then(markets=>{
-//   res.json(markets)
-//   })
-// })
+router.get("/market/:marketId", (req, res) => {
+  Market.findById(req.params.marketId)
+    .then(market => {
+      res.render("market-details", {market});
+    })
+    .catch(err => {
+      console.log("Error while retrieving the market: ", err);
+    });
+});
 
 module.exports = router;

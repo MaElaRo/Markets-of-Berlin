@@ -35,15 +35,6 @@ const marketSchema = new Schema({
     }
   },
 
-  // markettype: {
-  //   type: String,
-  //   enum: [
-  //     "Farmers market",
-  //     "Covered market",
-  //     "Street-Food-Market",
-  //     "Flea Market"
-  //   ]
-  // },
   location: {
     type: {
       type: String,

@@ -1,15 +1,15 @@
 
-<img src="{{}}">
+<img src="{{market.market.marketImg}}">
 <h1>{{market.marketname}}</h1>
-<h3>{{market.marketType}}</h3>
-<p>Address: {{market.address}}</p>
+<h3>{{market.market.marketType}}</h3>
+{{!-- <p>Address: {{market.address}}</p> --}}
 <p>Description: {{market.description}}</p>
 <h5>keywords</h5>
-{{#each market}}
-<li>{{this.keywords}}</li>
+{{#each market.keywords}}
+<li>{{this}}</li>
 {{/each}}
 <h5>Opening Time: </h5>
-{{#each market}}
+{{#each market.openingTime}}
 <p>{{this.day}}</p>
-<p>Open from {{this.openingHours}} till {{this.openingHours}}</p>
+<p>Open from {{this.openingHours}} till {{this.closingHours}}</p>
 {{/each}}
