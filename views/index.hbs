@@ -23,6 +23,7 @@
     let popup = new mapboxgl.Popup({ offset: 0, className: 'my-class' })
       .setHTML(`<div class="popup"><p>${market.marketname}</p><p>${market.description}</p><img src="${market.market.marketImg}" alt="" style="width:50px;height:50px;"></div>`)
       .setMaxWidth("none")
+
     var el = document.createElement('div');
     el.className = 'marker';
     el.style.backgroundImage = `url(/images/${market.market.marketType.toLowerCase().replace(" ", "")}.png)`
@@ -32,9 +33,11 @@
       .setLngLat(market.location.coordinates.reverse())
       .setPopup(popup)
       .addTo(map)
+
+    console.log(market.marketname, market.location.coordinates);
   })
 
 
 
-map.addControl(new mapboxgl.NavigationControl());
+  map.addControl(new mapboxgl.NavigationControl());
 </script>
