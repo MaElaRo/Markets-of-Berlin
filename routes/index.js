@@ -23,7 +23,7 @@ router.get("/", (req, res, next) => {
     });
 });
 
-router.get("/", (req, res, next) => {
+router.post("/", (req, res, next) => {
   Market.find({}).then(markets => {
     let inputValue = req.body[box1];
     let output = `The box was ${inputValue}`;
