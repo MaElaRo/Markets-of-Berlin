@@ -63,7 +63,7 @@ router.post("/login", (req, res) => {
     }
     if (bcrypt.compareSync(password, user.password)) {
       req.session.user = user;
-      res.redirect("/");
+      res.redirect("/addmarket");
     } else {
       res.render("auth/login", { errorMessage: "Invalid credentials" });
     }

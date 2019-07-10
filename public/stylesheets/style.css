@@ -4,7 +4,8 @@
 
 #logo {
   width: 3.5rem;
-  height: auto; }
+  height: auto;
+  margin-right: 10px; }
 
 .navbar {
   background-color: #343A40;
@@ -18,7 +19,8 @@
   justify-content: space-between; }
 
 .searchform {
-  align-self: center; }
+  align-self: center;
+  display: inline; }
 
 .searchbar {
   width: 400px;
@@ -98,15 +100,9 @@
   background-size: cover;
   cursor: pointer; }
 
-circle {
-  fill: black; }
-
-/* body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
-
-a {
-  color: #00B7FF; } */
-/*# sourceMappingURL=style.css.map */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
 
 /*# sourceMappingURL=style.css.map */
