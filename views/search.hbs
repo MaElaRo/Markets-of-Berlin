@@ -1,0 +1,50 @@
+chegi<div id='map' style='width: auto; height: 86vh'></div>
+
+<p>{{ searchString }}</p>
+<script>
+  //delete markers, create new markers
+
+
+  //initial map settings
+
+  mapboxgl.accessToken = 'pk.eyJ1IjoiYW5nbWluc2hlbmciLCJhIjoiY2pydDhjMjlwMXhpaDN5cHMxcjNya2ZmbyJ9.Tc5kmo0vZ1VKJbLK83OloA';
+  var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/light-v10',
+    center: [13.405, 52.52],
+    zoom: 11.15,
+  });
+
+
+  var markets = {{{ JSON markets }}}
+  console.log("helooo", query)
+  let searchString = null
+  document.getElementById("search-markets").onclick = () => {
+    searchString = document.getElementById("getSearchValue").value
+  };
+
+  markets.filter(market => {
+    if (market.marketname === searchString) {
+      let newPopup = new mapboxgl.Popup({ offset: 0, className: 'my-class' })
+        .setHTML(`<div class="popup"><p>${market.marketname}</p><p>${market.description}</p><img src="${market.market.marketImg}" alt="" style="width:50px;height:50px;"></div>`)
+        .setMaxWidth("none")
+      var el = document.createElement('div');
+      el.className = 'marker';
+      el.style.backgroundImage = `url(/images/${market.market.marketType.toLowerCase().replace(" ", "")}.png)`
+      el.style.width = '50px';
+      el.style.height = '47px';
+      let marker = new mapboxgl.Marker(el)
+        .setLngLat(market.location.coordinates.reverse())
+        .setPopup(newPopup)
+        .addTo(map)
+    }
+  })
+
+
+
+
+
+
+
+
+</script>
