@@ -1,4 +1,4 @@
-<div id='map' style='width: auto; height: 86vh'></div>
+{{!-- <div id='map' style='width: auto; height: 86vh'></div>
 
 
 <script>
@@ -16,7 +16,7 @@
   });
 
   // from Alican, between forEach and markets filter, filter markets by name, compare with the value of the form
-
+  /*
   var markets = {{{ JSON markets }}}
   markets.forEach(market => {
     let popup = new mapboxgl.Popup({ offset: 0, className: 'my-class' })
@@ -32,11 +32,28 @@
       .setPopup(popup)
       .addTo(map)
   })
+  */
 
+  var marketsNewTwo = {{{ JSON markets }}}
+  console.log("helooo", query)
+  let searchType = null
+  document.getElementById("search-marketType").onclick = () => {
+    searchType = document.getElementsByClassName("getMarketType").value
+  };
 
-
-
-
-
-
-</script>
+  marketsNewTwo.filter(market => {
+    if (market.marketname === searchType) {
+      let newPopup = new mapboxgl.Popup({ offset: 0, className: 'my-class' })
+        .setHTML(`<div class="popup"><p>${market.marketname}</p><p>${market.description}</p><img src="${market.market.marketImg}" alt="" style="width:50px;height:50px;"></div>`)
+        .setMaxWidth("none")
+      var el = document.createElement('div');
+      el.className = 'marker';
+      el.style.backgroundImage = `url(/images/${market.market.marketType.toLowerCase().replace(" ", "")}.png)`
+      el.style.width = '50px';
+      el.style.height = '47px';
+      let marker = new mapboxgl.Marker(el)
+        .setLngLat(market.location.coordinates.reverse())
+        .setPopup(newPopup)
+        .addTo(map)
+    }
+  })--}}
