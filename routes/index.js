@@ -39,15 +39,37 @@ router.post("/addmarket", (req, res, next) => {
     closingHours
   } = req.body;
 
-// let opTime = 
-console.log(marketname,
-  marketType,
-  description,
-  keywords,
-  day,
-  openingHours,
-  closingHours)
-  
+  console.log(
+    marketname,
+    marketType,
+    description,
+    keywords,
+    day,
+    openingHours,
+    closingHours
+  );
+
+  let opHours = openingHours.filter(elem => elem !== "");
+  let cloHours = closingHours.filter(elem => elem !== "");
+  let opTime =
+    typeof day === "string"
+      ? [
+          {
+            day: day,
+            openingHours: opHours[0],
+            closingHours: cloHours[0]
+          }
+        ]
+      : day.map((elem, index) => {
+          return {
+            day: elem,
+            openingHours: opHours[index],
+            closingHours: cloHours[index]
+          };
+        });
+
+  // geo.geocode('mapbox.places', address, function (err, geoData) {
+
   Market.create({
     marketname,
     market: {
@@ -57,12 +79,8 @@ console.log(marketname,
 
     // },
     description,
-    keywords
-    //openingTime: day, 
-      // openingHours: openingHours,
-      // closingHours: closingHours
-  
-
+    keywords,
+    openingTime: opTime
   })
     .then(() => {
       res.redirect("/");
