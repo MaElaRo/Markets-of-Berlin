@@ -34,24 +34,6 @@
     // create empty array to store the drawn marker so that they can be removed with a loop.
     let markerArr = []
     const markets = {{{ JSON markets }}}
-    markets.forEach(market => {
-      let popup = new mapboxgl.Popup({ offset: 0, className: 'my-class' })
-        .setHTML(`<div class="popup"><p>${market.marketname}</p><p>${market.description}</p>  <a href="/market/${market._id}">Read more</a>
-      <img src="${market.market.marketImg}" alt="" style="width:50px;height:50px;"></div>`)
-        .setMaxWidth("none")
-
-      var el = document.createElement('div');
-      el.className = 'marker';
-      el.style.backgroundImage = `url(/images/${market.market.marketType.toLowerCase().replace(" ", "")}.png)`
-      el.style.width = '50px';
-      el.style.height = '47px';
-      let marker = new mapboxgl.Marker(el)
-        .setLngLat(market.location.coordinates.reverse())
-        .setPopup(popup)
-        .addTo(map)
-
-      console.log(market.marketname, market.location.coordinates);
-    })
     // from Alican, between forEach and markets filter, filter markets by name, compare with the value of the form
 
     function draw() {
