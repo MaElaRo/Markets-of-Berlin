@@ -1,4 +1,4 @@
-chegi<div id='map' style='width: auto; height: 86vh'></div>
+<div id='map' style='width: auto; height: 86vh'></div>
 
 <p>{{ searchString }}</p>
 <script>
@@ -17,7 +17,6 @@ chegi<div id='map' style='width: auto; height: 86vh'></div>
 
 
   var markets = {{{ JSON markets }}}
-  console.log("helooo", query)
   let searchString = null
   document.getElementById("search-markets").onclick = () => {
     searchString = document.getElementById("getSearchValue").value

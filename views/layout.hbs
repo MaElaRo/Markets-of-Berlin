@@ -11,6 +11,8 @@
   <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.0/mapbox-gl.js'></script>
   <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap" rel="stylesheet">
   <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.0/mapbox-gl.css' rel='stylesheet' />
+  <script src='https://api.mapbox.com/mapbox.js/v3.2.0/mapbox.js'></script>
+  <link href='https://api.mapbox.com/mapbox.js/v3.2.0/mapbox.css' rel='stylesheet' />
 </head>
 
 <body>
@@ -18,9 +20,10 @@
 
     <nav class="navbar">
       <div class="logo-search">
-        <a href="/"><img id="logo" src="/images/logo.png" alt="logo"></a>
-        <form class="searchform">
-          <input for="searchinput" class="searchbar" type="text" placeholder="Search a market" aria-label="Search">
+        <a href="#"><img id="logo" src="/images/logo.png" alt="logo"></a>
+        <form class="searchform" action="/" method="GET">
+          <input for="searchinput" name="manu" class="searchbar" id="getSearchValue" type="text"
+            placeholder="Search a market" aria-label="Search">
           <button id="search-markets" type="submit">Search</button>
         </form>
       </div>
@@ -31,6 +34,7 @@
     </nav>
 
 
+
     {{{body}}}
 
   </div>
@@ -38,7 +42,7 @@
     <p>
       Made by
       <a href="https://www.linkedin.com/in/adontcova/">Anna Dontcova</a> and <a
-        href="https://www.linkedin.com/in/manuela-sakura-rommel-4aa3ba156/">Manuella Rommel</a> during <a
+        href="https://www.linkedin.com/in/manuela-sakura-rommel-4aa3ba156/">Manuela Rommel</a> during <a
         href="https://www.ironhack.com/en/courses/web-development-bootcamp">Ironhack</a> bootcamp. © 2019
     </p>
   </div>
