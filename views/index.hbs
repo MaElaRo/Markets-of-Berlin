@@ -72,7 +72,7 @@
 
 
         let popup = new mapboxgl.Popup({ offset: 0, className: 'my-class' })
-          .setHTML(`<div class="popup"><p>${market.marketname}</p><p>${market.description}</p><img src="${market.market.marketImg}" alt="" style="width:50px;height:50px;"></div>`)
+          .setHTML(`<div class="popup"><p>${market.marketname}</p><p>${market.description}</p>  <a href="/market/${market._id}">Read more</a><img src="${market.market.marketImg}" alt="" style="width:50px;height:50px;"></div>`)
           .setMaxWidth("none")
         var el = document.createElement('div');
         el.className = 'marker';
