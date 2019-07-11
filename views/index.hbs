@@ -7,7 +7,6 @@
   <button class="filter">Street food market</button>
   <button class="filter">Flea market</button>
 
-  <div id='map' style='width: auto; height: 86vh'></div>
   <script>
     //delete markers, create new markers
     let state = {
@@ -17,10 +16,8 @@
       "Flea market": false
     }
 
-    document.getElementById("search-markets").onclick = () => {
-      const query = document.querySelector(".searchbar").value;
-
-    }
+   // document.getElementById("search-markets").onclick = () => {
+    //  const query = document.querySelector(".searchbar").value;}
     //initial map settings
 
     mapboxgl.accessToken = 'pk.eyJ1IjoiYW5nbWluc2hlbmciLCJhIjoiY2pydDhjMjlwMXhpaDN5cHMxcjNya2ZmbyJ9.Tc5kmo0vZ1VKJbLK83OloA';
@@ -50,7 +47,6 @@
         .setPopup(popup)
         .addTo(map)
 
-      console.log(market.marketname, market.location.coordinates);
     })
     // from Alican, between forEach and markets filter, filter markets by name, compare with the value of the form
 
@@ -94,3 +90,4 @@
 
     map.addControl(new mapboxgl.NavigationControl());
   </script>
+  </section>
