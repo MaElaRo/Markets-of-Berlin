@@ -32,43 +32,56 @@
 
             <span class="navbar-item">
               <div class="field has-addons">
-
                 <div class="control">
 
-                  <input class="input" type="text" placeholder="Find a market">
+                  <form class="searchform" action="/" method="GET">
+                    <input for="searchinput" name="manu" class="searchbar input" id="getSearchValue" type="text"
+                      placeholder="Search a market" aria-label="Search">
+
+                </div>
+                <div class="control">
+                  <a class="button myblue" id="search-markets" type="submit"><span class="icon">
+                      <i class="fas fa-search"></i>
+                    </span></a>
+                </div>
+                </form>
+
+                {{!-- <input class="input" type="text" placeholder="Find a market">
                 </div>
                 <div class="control">
                   <a class="button myblue" id="search-markets">
                     <span class="icon">
                       <i class="fas fa-search"></i>
                     </span>
-                  </a>
-                </div>
-
+                  </a> --}}
               </div>
-            </span>
-            <span class="navbar-burger burger" data-target="navbarMenuHeroA">
-              <span></span>
-              <span></span>
-              <span></span>
-            </span>
+
           </div>
-          <div id="navbarMenuHeroA" class="navbar-menu">
-            <div class="navbar-end">
+          </span>
+          <span class="navbar-burger burger" data-target="navbarMenuHeroA">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </div>
+        <div id="navbarMenuHeroA" class="navbar-menu">
+          <div class="navbar-end">
 
 
-              <span class="navbar-item">
-                <a href="/logout" class="button myyellow is-rounded">Log out</a>
-              </span>
-              <span class="navbar-item">
-                <a href="/addmarket" class="button myblue is-rounded">Add a market</a>
-              </span>
-            </div>
+            <span class="navbar-item">
+              <a href="/logout" class="button myyellow is-rounded">Log out</a>
+            </span>
+            <span class="navbar-item">
+              <a href="/addmarket" class="button myblue is-rounded">Add a market</a>
+            </span>
           </div>
         </div>
-      </nav>
+    </div>
+    </nav>
     </div>
   </section>
+
+
 
   {{!-- <div class="container">
     <nav class="navbar">
