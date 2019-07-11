@@ -8,8 +8,17 @@ geo.setAccessToken('pk.eyJ1IjoiYW5nbWluc2hlbmciLCJhIjoiY2pydDhjMjlwMXhpaDN5cHMxc
 
 /* GET home page */
 router.get("/", (req, res, next) => {
+  const myQuery = req.query.manu;
   Market.find({})
     .then(markets => {
+      if (myQuery !== undefined)
+        markets = markets.filter(obj =>
+          obj.marketname
+            .replace(/[^a-zA-Z0-9 ]/g, "")
+            .toLowerCase()
+            .split(" ")
+            .includes(myQuery)
+        );
       res.render("index", { markets });
     })
     .catch(error => {
