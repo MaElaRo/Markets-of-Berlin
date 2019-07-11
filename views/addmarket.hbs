@@ -2,15 +2,18 @@
   <div class="hero-body">
     <div class="container has-text-centered">
       <div class="form-container">
+
         <div class="container-card">
           <h1 class="subtitle is-3">Add a market</h1>
-          <form action="/addmarket" method="POST">
+
+          <form action="/addmarket" method="POST" id="add-form">
+
 
             <div class="columns is-mobile">
               <div class="column is-half">
 
                 <div class="field">
-                  <label class="label" for=" marketname">Market name: </label>
+                  <label class="label" for=" marketname">Market name: </label>w
 
                   <div class="control">
                     <input class="input is-small" type="text" name="marketname" id="marketname">
@@ -101,20 +104,24 @@
               </div>
 
 
-
-
           </form>
-
         </div>
         <div class="submitnewmarket">
-          <button type="submit" class="button myrose is-rounded">Add a market</button>
+          <button type="submit" class="button myrose is-rounded add-button">Add a market</button>
         </div>
+
       </div>
+
+
     </div>
   </div>
 </section>
 
-
+<script>
+  document.querySelector('.add-button').addEventListener('click', () => {
+    document.querySelector('#add-form').submit()
+  })
+</script>
 
 {{!-- marketname: {
     type: String,

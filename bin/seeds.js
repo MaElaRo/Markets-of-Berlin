@@ -1,7 +1,10 @@
 const mongoose = require("mongoose");
 const Markets = require("../models/Markets");
 
-mongoose.connect("mongodb://localhost/markets-of-berlin", {
+const mlabURI =
+  "mongodb://heroku_1jsc86qb:sikhc7u8ojtpju5nbs6vqade2o@ds249967.mlab.com:49967/heroku_1jsc86qb";
+
+mongoose.connect(mlabURI || "mongodb://localhost/markets-of-berlin", {
   useNewUrlParser: true
 });
 
