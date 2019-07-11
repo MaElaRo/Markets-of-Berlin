@@ -2,18 +2,20 @@
 
   <div id='map' style='width: auto; height: 100vh'></div>
 
-  <button class="filter">Farmers market</button>
-  <button class="filter">Covered market</button>
-  <button class="filter">Street food market</button>
-  <button class="filter">Flea market</button>
+  {{!-- <button class="filter" value="Farmers market">Farmers market</button>
+  <button class="filter" value="Covered market">Covered market</button>
+  <button class="filter" value="Street-Food-Market">Street food market</button>
+  <button class="filter" value="Flea market">Flea market</button> --}}
+
+
 
   <script>
     //delete markers, create new markers
     let state = {
-      "Farmers market": false,
-      "Covered market": false,
-      "Street Food Market": false,
-      "Flea market": false
+      "Farmers market": true,
+      "Covered market": true,
+      "Street-Food-Market": true,
+      "Flea market": true
     }
 
    // document.getElementById("search-markets").onclick = () => {
@@ -34,11 +36,12 @@
     // from Alican, between forEach and markets filter, filter markets by name, compare with the value of the form
 
     function draw() {
-      let marketsCopy = [...markets]
+      let marketsCopy = []
       for (let market in state) {
         if (state[market])
-          marketsCopy = marketsCopy.filter(el => el.market.marketType != market)
+          marketsCopy = marketsCopy.concat([...markets].filter(el => el.market.marketType === market))
       }
+      console.log(markets[0])
       marketsCopy.forEach(market => {
         let popup = new mapboxgl.Popup({ offset: 0, className: 'my-class' })
           .setHTML(`<div class="popup"><p>${market.marketname}</p><p>${market.description}</p><img src="${market.market.marketImg}" alt="" style="width:50px;height:50px;"></div>`)
@@ -60,14 +63,28 @@
       markerArr.forEach(marker => marker.remove())
       markerArr = []
     }
-
-    document.querySelectorAll(".filter").forEach(button => {
-      button.addEventListener("click", (event) => {
+//
+    document.querySelectorAll(".filter").forEach(option => {
+      option.addEventListener("change", (event) => {
+        console.log("Hello world")
         removeMarker()
         state[event.target.innerHTML] = !state[event.target.innerHTML]
         draw()
       })
     })
+//
+     const selectType = document.getElementById("filter")
+    
+      selectType.addEventListener("change", () => {
+        console.log(selectType.value)
+        removeMarker()
+        for (const key in state) {
+          state[key] = false
+        }
+        console.log(state)
+        state[selectType.value] = !state[selectType.value]
+        draw()
+      })
 
     draw()
 
