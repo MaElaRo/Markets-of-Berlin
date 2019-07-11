@@ -3,12 +3,14 @@ const router = express.Router();
 const mongoose = require("mongoose");
 const Market = require("../models/Markets");
 
-const geo = require ("mapbox-geocoding");
-geo.setAccessToken('pk.eyJ1IjoiYW5nbWluc2hlbmciLCJhIjoiY2pydDhjMjlwMXhpaDN5cHMxcjNya2ZmbyJ9.Tc5kmo0vZ1VKJbLK83OloA');
+const geo = require("mapbox-geocoding");
+geo.setAccessToken(
+  "pk.eyJ1IjoiYW5nbWluc2hlbmciLCJhIjoiY2pydDhjMjlwMXhpaDN5cHMxcjNya2ZmbyJ9.Tc5kmo0vZ1VKJbLK83OloA"
+);
 
 /* GET home page */
 router.get("/", (req, res, next) => {
-  const myQuery = req.query.manu;
+  const myQuery = req.query.market;
   Market.find({})
     .then(markets => {
       if (myQuery !== undefined)
@@ -68,34 +70,33 @@ router.post("/addmarket", (req, res, next) => {
           };
         });
 
-  geo.geocode('mapbox.places', address, function (err, geoData) {
-
-  Market.create({
-    marketname,
-    market: {
-      marketType: marketType
-    },
-    location: {
-      formType: "Point",
-      coordinates: geoData.features[0].geometry.coordinates.reverse(),
-    },
-    description,
-    keywords,
-    openingTime: opTime
-  })
-    .then((obj) => {
-      res.redirect(`/market/${obj._id}`);
+  geo.geocode("mapbox.places", address, function(err, geoData) {
+    Market.create({
+      marketname,
+      market: {
+        marketType: marketType
+      },
+      location: {
+        formType: "Point",
+        coordinates: geoData.features[0].geometry.coordinates.reverse()
+      },
+      description,
+      keywords,
+      openingTime: opTime
     })
-    .catch(err => {
-      console.log("Error while adding a market: ", err);
-    });
+      .then(obj => {
+        res.redirect(`/market/${obj._id}`);
+      })
+      .catch(err => {
+        console.log("Error while adding a market: ", err);
+      });
   });
 });
 
 router.get("/market/:marketId", (req, res) => {
   Market.findById(req.params.marketId)
     .then(market => {
-      res.render("market-details", {market});
+      res.render("market-details", { market });
     })
     .catch(err => {
       console.log("Error while retrieving the market: ", err);
