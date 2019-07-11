@@ -26,7 +26,6 @@
     // document.getElementById("search-markets").onclick = () => {
     //  const query = document.querySelector(".searchbar").value;}
     //initial map settings
-
     mapboxgl.accessToken = 'pk.eyJ1IjoiYW5nbWluc2hlbmciLCJhIjoiY2pydDhjMjlwMXhpaDN5cHMxcjNya2ZmbyJ9.Tc5kmo0vZ1VKJbLK83OloA';
     var map = new mapboxgl.Map({
       container: 'map',
@@ -34,12 +33,10 @@
       center: [13.405, 52.52],
       zoom: 11.15,
     });
-
     // create empty array to store the drawn marker so that they can be removed with a loop.
     let markerArr = []
     const markets = {{{ JSON markets }}}
     // from Alican, between forEach and markets filter, filter markets by name, compare with the value of the form
-
     function draw() {
       let marketsCopy = []
       for (let market in state.type) {
@@ -50,21 +47,21 @@
 
 
       //for (let day in state.day) {
-       // if (state.day[day]) {
-         // console.log(state.day[day])
+      // if (state.day[day]) {
+      // console.log(state.day[day])
 
-         // marketsCopy = marketsCopy.concat([...marketsCopy].filter(el => {
-         //   const openTimes = el.openingTime;
-         //   const dayArray = openTimes.map(function (item) {
-          //    return item['day'];
-         //   });
-      
-         //   if (dayArray.includes(day)) return true;
+      // marketsCopy = marketsCopy.concat([...marketsCopy].filter(el => {
+      //   const openTimes = el.openingTime;
+      //   const dayArray = openTimes.map(function (item) {
+      //    return item['day'];
+      //   });
+
+      //   if (dayArray.includes(day)) return true;
 
 
-        //  }))
-       // }
-     // }
+      //  }))
+      // }
+      // }
 
       //console.log(marketsCopy.length)
 
@@ -87,7 +84,6 @@
         markerArr.push(marker)
       })
     }
-
     function removeMarker() {
       markerArr.forEach(marker => marker.remove())
       markerArr = []
@@ -118,9 +114,7 @@
       console.log(state.day)
       draw()
     })
-
     draw()
-
     map.addControl(new mapboxgl.NavigationControl());
   </script>
 </section>
