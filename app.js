@@ -9,10 +9,12 @@ const mongoose = require("mongoose");
 const logger = require("morgan");
 const path = require("path");
 const session = require("express-session");
-const MongoStore   = require("connect-mongo")(session);
+const MongoStore = require("connect-mongo")(session);
 
 mongoose
-  .connect("mongodb://localhost/markets-of-berlin", { useNewUrlParser: true })
+  .connect(process.env.MONGODB_URI || "mongodb://localhost/markets-of-berlin", {
+    useNewUrlParser: true
+  })
   .then(x => {
     console.log(
       `Connected to Mongo! Database name: "${x.connections[0].name}"`
@@ -41,7 +43,7 @@ app.use(
     cookie: { maxAge: 24 * 60 * 60 },
     resave: false,
     saveUninitialized: false,
-    store: new MongoStore ({
+    store: new MongoStore({
       mongooseConnection: mongoose.connection
     })
   })
