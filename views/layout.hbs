@@ -6,8 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{{title}}</title>
-  <link rel="stylesheet" href="/stylesheets/style.css" />
   <link rel="icon" href="/images/favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script>
   <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.0/mapbox-gl.js'></script>
   <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap" rel="stylesheet">
@@ -15,8 +17,58 @@
 </head>
 
 <body>
-  <div class="container">
 
+  <section class="hero has-background-dark is-medium">
+    <!-- Hero head: will stick at the top -->
+    <div class="hero-head">
+      <nav class="navbar">
+        <div class="container">
+          <div class="navbar-brand">
+            <a href="/" class="navbar-item">
+              <img src="/images/street-food-market.png" alt="Logo">
+            </a>
+            
+             <span class="navbar-item">
+            <div class="field has-addons">
+              
+              <div class="control">
+               
+                <input class="input" type="text" placeholder="Find a market">
+              </div>
+              <div class="control">
+                <a class="button myblue" id="search-markets">
+                   <span class="icon">
+                     <i class="fas fa-search"></i>
+                    </span>
+                </a>
+              </div>
+              
+            </div>
+            </span>
+            <span class="navbar-burger burger" data-target="navbarMenuHeroA">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </div>
+          <div id="navbarMenuHeroA" class="navbar-menu">
+            <div class="navbar-end">
+
+
+              <span class="navbar-item">
+                <a href="/logout" class="button myyellow is-rounded">Log out</a>
+              </span>
+              <span class="navbar-item">
+                <a href="/addmarket" class="button myblue is-rounded">Add a market</a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </section>
+
+  {{!-- <div class="container">
     <nav class="navbar">
       <div class="logo-search">
         <a href="/"><img id="logo" src="/images/street-food-market.png" alt="logo"></a>
@@ -26,26 +78,35 @@
         </form>
       </div>
       <div class="buttons">
-           <a href="/logout" class="btn-log-in">Log out</a>
-        <a href="/addmarket" class="btn-add">Add a market</a>
-     
       </div>
-    </nav>
+    </nav> --}}
 
 
     {{{body}}}
 
-  </div>
-  <div class="footer">
-    <p>
-      Made by
-      <a href="https://www.linkedin.com/in/adontcova/">Anna Dontcova</a> and <a
-        href="https://www.linkedin.com/in/manuela-sakura-rommel-4aa3ba156/">Manuella Rommel</a> during <a
-        href="https://www.ironhack.com/en/courses/web-development-bootcamp">Ironhack</a> bootcamp. © 2019
-    </p>
-  </div>
-  <script src="/javascripts/script.js"></script>
 
+    {{!-- <div class="footer">
+      <p>
+        Made by
+        <a href="https://www.linkedin.com/in/adontcova/">Anna Dontcova</a> and <a
+          href="https://www.linkedin.com/in/manuela-sakura-rommel-4aa3ba156/">Manuella Rommel</a> during <a
+          href="https://www.ironhack.com/en/courses/web-development-bootcamp">Ironhack</a> bootcamp. © 2019
+      </p>
+    </div> --}}
+ 
+
+    <footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+        Made by
+        <a href="https://www.linkedin.com/in/adontcova/">Anna Dontcova</a> and <a
+          href="https://www.linkedin.com/in/manuela-sakura-rommel-4aa3ba156/">Manuella Rommel</a> during <a
+          href="https://www.ironhack.com/en/courses/web-development-bootcamp">Ironhack</a> bootcamp. © 2019
+      </p>
+  </div>
+</footer>
+
+  <script src="/javascripts/script.js"></script>
 </body>
 
 </html>
