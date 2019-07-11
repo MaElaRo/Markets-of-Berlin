@@ -31,6 +31,7 @@
     // create empty array to store the drawn marker so that they can be removed with a loop.
     let markerArr = []
     const markets = {{{ JSON markets }}}
+<<<<<<< HEAD
     markets.forEach(market => {
       let popup = new mapboxgl.Popup({ offset: 0, className: 'my-class' })
         .setHTML(`<div class="popup"><p>${market.marketname}</p><p>${market.description}</p>  <a href="/market/${market._id}">Read more</a>
@@ -48,6 +49,8 @@
         .addTo(map)
 
     })
+=======
+>>>>>>> 2bf3db68e4f0b703b2105e51f633bb84b6ddf453
     // from Alican, between forEach and markets filter, filter markets by name, compare with the value of the form
 
     function draw() {
