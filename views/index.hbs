@@ -2,23 +2,28 @@
 
   <div id='map' style='width: auto; height: 100vh'></div>
 
-  {{!-- <button class="filter" value="Farmers market">Farmers market</button>
-  <button class="filter" value="Covered market">Covered market</button>
-  <button class="filter" value="Street-Food-Market">Street food market</button>
-  <button class="filter" value="Flea market">Flea market</button> --}}
-
-
-
   <script>
     //delete markers, create new markers
     let state = {
-      "Farmers market": true,
-      "Covered market": true,
-      "Street-Food-Market": true,
-      "Flea market": true
+      type: {
+        "Farmers market": true,
+        "Covered market": true,
+        "Street-Food-Market": true,
+        "Flea market": true
+      },
+      day: {
+        "Monday": false,
+        "Tuesday": false,
+        "Wednesday": false,
+        "Thursday": false,
+        "Friday": false,
+        "Saturday": false,
+        "Sunday": false
+
+      }
     }
 
-   // document.getElementById("search-markets").onclick = () => {
+    // document.getElementById("search-markets").onclick = () => {
     //  const query = document.querySelector(".searchbar").value;}
     //initial map settings
 
@@ -37,12 +42,35 @@
 
     function draw() {
       let marketsCopy = []
-      for (let market in state) {
-        if (state[market])
+      for (let market in state.type) {
+        if (state.type[market])
           marketsCopy = marketsCopy.concat([...markets].filter(el => el.market.marketType === market))
       }
-      console.log(markets[0])
+      //console.log(marketsCopy.length)
+
+
+      //for (let day in state.day) {
+       // if (state.day[day]) {
+         // console.log(state.day[day])
+
+         // marketsCopy = marketsCopy.concat([...marketsCopy].filter(el => {
+         //   const openTimes = el.openingTime;
+         //   const dayArray = openTimes.map(function (item) {
+          //    return item['day'];
+         //   });
+      
+         //   if (dayArray.includes(day)) return true;
+
+
+        //  }))
+       // }
+     // }
+
+      //console.log(marketsCopy.length)
+
       marketsCopy.forEach(market => {
+
+
         let popup = new mapboxgl.Popup({ offset: 0, className: 'my-class' })
           .setHTML(`<div class="popup"><p>${market.marketname}</p><p>${market.description}</p><img src="${market.market.marketImg}" alt="" style="width:50px;height:50px;"></div>`)
           .setMaxWidth("none")
@@ -51,6 +79,7 @@
         el.style.backgroundImage = `url(/images/${market.market.marketType.toLowerCase().replace(" ", "")}.png)`
         el.style.width = '50px';
         el.style.height = '47px';
+
         let marker = new mapboxgl.Marker(el)
           .setLngLat([...market.location.coordinates].reverse())
           .setPopup(popup)
@@ -63,31 +92,35 @@
       markerArr.forEach(marker => marker.remove())
       markerArr = []
     }
-//
-    document.querySelectorAll(".filter").forEach(option => {
-      option.addEventListener("change", (event) => {
-        console.log("Hello world")
-        removeMarker()
-        state[event.target.innerHTML] = !state[event.target.innerHTML]
-        draw()
-      })
+
+    const selectType = document.getElementById("filter")
+
+    selectType.addEventListener("change", () => {
+      removeMarker()
+      for (const key in state.type) {
+        state.type[key] = false
+      }
+      state.type[selectType.value] = !state.type[selectType.value]
+      draw()
     })
-//
-     const selectType = document.getElementById("filter")
-    
-      selectType.addEventListener("change", () => {
-        console.log(selectType.value)
-        removeMarker()
-        for (const key in state) {
-          state[key] = false
-        }
-        console.log(state)
-        state[selectType.value] = !state[selectType.value]
-        draw()
-      })
+
+    const selectDay = document.getElementById("filter-days")
+
+
+    selectDay.addEventListener("change", () => {
+      console.log(selectDay.value)
+
+      removeMarker()
+      for (const key in state.day) {
+        state.day[key] = false
+      }
+      state.day[selectDay.value] = !state.day[selectDay.value]
+      console.log(state.day)
+      draw()
+    })
 
     draw()
 
     map.addControl(new mapboxgl.NavigationControl());
   </script>
-  </section>
+</section>
