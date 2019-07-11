@@ -23,15 +23,15 @@ router.get("/", (req, res, next) => {
     });
 });
 
-router.post("/", (req, res, next) => {
-  Market.find({}).then(markets => {
-    let inputValue = req.body[box1];
-    let output = `The box was ${inputValue}`;
-    if (checkedValue) return (output += "box was checked");
-    else return (output += "was not checked");
-  });
-  res.render("index", { output });
-});
+// router.post("/", (req, res, next) => {
+//   Market.find({}).then(markets => {
+//     let inputValue = req.body[box1];
+//     let output = `The box was ${inputValue}`;
+//     if (checkedValue) return (output += "box was checked");
+//     else return (output += "was not checked");
+//   });
+//   res.render("index", { output });
+// });
 
 // router.post("/search", (req, res) => {
 //   console.log("-------", req.query.manu);
