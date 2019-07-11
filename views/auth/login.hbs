@@ -1,22 +1,26 @@
-<section class="hero is-fullheight">
-    <div class="container">
-        <div class="notification">
-            <form id="form" action="/login" method="POST">
+<section class="hero is-fullheight backgroundlogin">
+    <div class="hero-body">
+        <div class="container">
+            <div class="notification containercolor">
+                <form id="form" action="/login" method="POST">
 
-                <label for="username">Username</label><br />
-                <input type="text" name="username" /> <br>
+                    <label for="username">Username</label><br />
+                    <input class="input" type="text" name="username" /> <br>
 
-                <label for="password">Password</label><br />
-                <input type="password" name="password" /> <br>
+                    <label for="password">Password</label><br />
+                    <input class="input" type="password" name="password" /> <br>
 
-                {{#if errorMessage}}
-                <div class="error-message">{{errorMessage}}</div>
-                {{/if}}
+                    {{#if errorMessage}}
+                    <div class="error-message">{{errorMessage}}</div>
+                    {{/if}}
+                    <span class="navbar-item">
+                        <button type="submit" class="button myrose is-rounded">Log in</button>
+                    </span>
 
-                <button type="submit">Log in</button>
 
-                <p>Don't have an account yet? <a href="/signup">Sign up</a> for free!</p>
-            </form>
+                    <p>Don't have an account yet? <a href="/signup">Sign up</a> for free!</p>
+                </form>
+            </div>
         </div>
     </div>
 </section>

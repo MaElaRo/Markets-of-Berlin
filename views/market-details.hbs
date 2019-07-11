@@ -1,15 +1,30 @@
+<section class="hero is-fullheight">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <figure class="image image is-2by1">
+        <img src="{{market.market.marketImg}}">
+      </figure>
 
-<img src="{{market.market.marketImg}}">
-<h1>{{market.marketname}}</h1>
-<h3>{{market.market.marketType}}</h3>
-{{!-- <p>Address: {{market.address}}</p> --}}
-<p>Description: {{market.description}}</p>
-<h5>keywords</h5>
-{{#each market.keywords}}
-<li>{{this}}</li>
-{{/each}}
-<h5>Opening Time: </h5>
-{{#each market.openingTime}}
-<p>{{this.day}}</p>
-<p>Open from {{this.openingHours}} till {{this.closingHours}}</p>
-{{/each}}
+      <h1 class="subtitle is-1">{{market.marketname}}</h1>
+      <h3 class="subtitle is-4">{{market.market.marketType}}</h3>
+
+      {{!-- <p>Address: {{market.address}}</p> --}}
+      <p>Description: {{market.description}}</p>
+      <hr>
+      <h5 class="subtitle is-5">Keywords</h5>
+      {{#each market.keywords}}
+      <li>{{this}}</li>
+      {{/each}}
+      <hr>
+      <h5 class="subtitle is-5">Opening Time: </h5>
+      {{#each market.openingTime}}
+      <div>
+        <ul>
+          <li>{{this.day}}</li>
+        </ul>
+      </div>
+      <p>Open from {{this.openingHours}} till {{this.closingHours}}</p>
+      {{/each}}
+    </div>
+  </div>
+</section>

@@ -1,37 +1,88 @@
 #logo {
   width: 2rem;
-  height: auto; }
+  height: auto;
+}
 
 .footer {
-  background-color: #343A40;
-  height: 30px; }
+  background-color: #343a40;
+  height: 30px;
+}
 
 .footer p {
   color: white;
   text-align: center;
   font-size: 10px;
-  padding-top: 5px; }
+  padding-top: 5px;
+}
 
 .footer p a {
   color: white;
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 .marker {
   background-image: none;
   background-size: cover;
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 .form-container {
   display: flex;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+}
 
 .myblue {
-  background-color: #4FA9D2;
-  border: #343A40; }
+  background-color: #4fa9d2;
+  border: #343a40;
+}
 
 .myyellow {
-  background-color: #F6D932;
-  border: #343A40; }
+  background-color: #f6d932;
+  border: #343a40;
+}
+.myrose {
+  background-color: #e4506f;
 
-/*# sourceMappingURL=style.css.map */
+  border: #343a40;
+}
+
+.backgroundlogin {
+  background-color: #f6f6f4;
+}
+
+.containercolor {
+  background-color: #f6d932;
+}
+
+.submitnewmarket {
+  justify-content: flex-end;
+  padding: 20px;
+  margin: 20px;
+}
+
+.container-card {
+  background-color: white;
+  padding: 20px;
+  margin: 20px;
+}
+
+.control {
+  justify-content: center;
+  align-items: center;
+}
+
+.digits {
+  width: 50px;
+}
+
+input {
+  border-radius: 4px;
+}
+textarea {
+  border-radius: 4px;
+}
+
+.dates {
+  text-align: left;
+}

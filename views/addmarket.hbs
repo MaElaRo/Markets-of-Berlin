@@ -1,65 +1,122 @@
-<div class="form-container">
-<h1>Add a market</h1> 
-<form action="/addmarket" method="POST">
+<section class="hero is-fullheight backgroundlogin is-centered">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <div class="form-container">
+        <div class="container-card">
+          <h1 class="subtitle is-3">Add a market</h1>
+          <form action="/addmarket" method="POST">
 
+            <div class="columns is-mobile">
+              <div class="column is-half">
 
-  <label for="marketname">Market name: </label>
-  <input type="text" name="marketname" id="marketname"> <br>
+                <div class="field">
+                  <label class="label" for=" marketname">Market name: </label>
 
-  <label for="marketType">Market type: </label> <br>
-  <input type="radio" name="marketType" value="Farmers market"> Farmers market<br>
-   <input type="radio" name="marketType" value="Covered market"> Covered market<br>
-   <input type="radio" name="marketType" value="Street-Food-Market"> Street-Food-Market<br>
-   <input type="radio" name="marketType" value="Flea market"> Flea market<br>
+                  <div class="control">
+                    <input class="input is-small" type="text" name="marketname" id="marketname">
+                  </div>
+                </div>
 
-   <label for="address">Address: </label> <br>
-   <input type="text" name="address" id="address"> <br>
+                <div class="field">
+                  <label class=" radio label" for="marketType">Market type: </label>
+                  <div class="control">
+                    <input type="radio" name="marketType" value="Farmers market"> Farmers market<br>
+                    <input type="radio" name="marketType" value="Covered market"> Covered market<br>
+                    <input type="radio" name="marketType" value="Street-Food-Market"> Street-Food-Market<br>
+                    <input type="radio" name="marketType" value="Flea market"> Flea market<br>
+                  </div>
+                </div>
 
-  <label for="description">Description: </label> <br>
-  <input type="text" name="description" id="description"> <br>
+                <div class="field">
+                  <label class="label" for="address">Address: </label>
+                  <div class="control">
+                    <input class="input is-medium" type="text" name="address" id="address">
+                  </div>
+                </div>
 
-  <label for="keywords">Keywords: </label> <br>
-  <input type="checkbox" name="keywords" value= "authentic"> authentic<br>
-  <input type="checkbox" name="keywords" value="local"> local<br>
-  <input type="checkbox" name="keywords" value="organic"> organic<br> 
-
-  <label for="day">Opening Time: </label> <br>
-  <input type="checkbox" name="day" value="Monday"> Monday<br>
-  <p>from <input type="number" name="openingHours" max="24"> </p>
-  <p>till <input type="number" name="closingHours" max="24"> </p>
-
-  <input type="checkbox" name="day" value="Tuesday"> Tuesday<br>
-  <p>from <input type="number" name="openingHours" max="24"> </p>
-  <p>till <input type="number" name="closingHours" max="24"> </p>
-
-  <input type="checkbox" name="day" value="Wednesday"> Wednesday<br>
-  <p>from <input type="number" name="openingHours" max="24"> </p>
-  <p>till <input type="number" name="closingHours" max="24"> </p> 
-
-  <input type="checkbox" name="day" value="Thursday"> Thursday<br>
-  <p>from <input type="number" name="openingHours" max="24"> </p>
-  <p>till <input type="number" name="closingHours" max="24"> </p> 
-  
-  <input type="checkbox" name="day" value="Friday"> Friday<br> 
-  <p>from <input type="number" name="openingHours" max="24"> </p>
-  <p>till <input type="number" name="closingHours" max="24"> </p> 
-
-  <input type="checkbox" name="day" value="Saturday"> Saturday<br>
-  <p>from <input type="number" name="openingHours" max="24"> </p>
-  <p>till <input type="number" name="closingHours" max="24"> </p> 
-
-  <input type="checkbox" name="day" value="Sunday"> Sunday<br> 
-  <p>from <input type="number" name="openingHours" max="24"> </p>
-  <p>till <input type="number" name="closingHours" max="24"> </p> 
-
-  <button type="submit">Add a market</button>
-
-</form>
+                <div class="field">
+                  <label class="label" for="description">Description: </label>
+                </div>
+                <div class="control">
+                  <textarea class="input is-large" type="text" name="description" id="description"></textarea>
+                </div>
+                <div class="field">
+                  <label class="checkbox label" for="keywords">Keywords: </label>
+                  <div class="control">
+                    <input type="checkbox" name="keywords" value="authentic"> authentic<br>
+                    <input type="checkbox" name="keywords" value="local"> local<br>
+                    <input type="checkbox" name="keywords" value="organic"> organic<br>
+                  </div>
+                </div>
+              </div>
 
 
 
 
- {{!-- marketname: {
+              <div class="column is-half dates">
+                <label for="day" class="label">Opening Time: </label>
+
+
+                <input type="checkbox" name="day" value="Monday" class="checkbox"> Monday<br>
+                <p>from <input class="input digits is-small" type="number" name="openingHours" max="24"> </p>
+                <p>till <input class="input digits is-small" type="number" name="closingHours" max="24"> </p>
+
+
+
+                <input type="checkbox" name="day" value="Tuesday" class="checkbox"> Tuesday<br>
+                <p>from <input class="input digits is-small" type="number" name="openingHours" max="24"> </p>
+                <p>till <input class="input digits is-small" type="number" name="closingHours" max="24"> </p>
+
+
+
+                <input type="checkbox" name="day" value="Wednesday" class="checkbox"> Wednesday<br>
+                <p>from <input class="input digits is-small" type="number" name="openingHours" max="24"> </p>
+                <p>till <input class="input digits is-small" type="number" name="closingHours" max="24"> </p>
+
+
+
+                <input type="checkbox" name="day" value="Thursday" class="checkbox"> Thursday<br>
+                <p>from <input class="input digits is-small" type="number" name="openingHours" max="24"> </p>
+                <p>till <input class="input digits is-small" type="number" name="closingHours" max="24"> </p>
+
+
+
+
+                <input type="checkbox" name="day" value="Friday"> Friday<br>
+                <p>from <input class="input digits is-small" type="number" name="openingHours" max="24"> </p>
+                <p>till<input class="input digits is-small" type="number" name="closingHours" max="24"> </p>
+
+
+
+                <input type="checkbox" name="day" value="Saturday"> Saturday<br>
+                <p>from <input class="input digits is-small" type="number" name="openingHours" max="24"> </p>
+                <p>till<input class="input digits is-small" type="number" name="closingHours" max="24"> </p>
+
+
+
+                <input type="checkbox" name="day" value="Sunday"> Sunday<br>
+                <p>from <input class="input digits is-small" type="number" name="openingHours" max="24"> </p>
+                <p>till <input class="input digits is-small" type="number" name="closingHours" max="24"> </p>
+
+              </div>
+
+
+
+
+          </form>
+
+        </div>
+        <div class="submitnewmarket">
+          <button type="submit" class="button myrose is-rounded">Add a market</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+{{!-- marketname: {
     type: String,
     required: true
   },
