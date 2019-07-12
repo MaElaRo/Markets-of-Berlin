@@ -19,7 +19,7 @@ router.get("/", (req, res, next) => {
             .replace(/[^a-zA-Z0-9 ]/g, "")
             .toLowerCase()
             .split(" ")
-            .includes(myQuery)
+            .includes(myQuery.toLowerCase())
         );
       res.render("index", { markets });
     })
