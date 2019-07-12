@@ -38,8 +38,7 @@
   height: auto; }
 
 .footer {
-  background-color: #343a40;
-  height: 30px; }
+  background-color: #343a40; }
 
 .footer p {
   color: white;
@@ -104,5 +103,22 @@ textarea {
 
 .dates {
   text-align: left; }
+
+.popup {
+  height: 200px;
+  width: 100px;
+  background-color: white;
+  color: #343a40;
+  border: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column; }
+
+.popup a {
+  color: #e4506f; }
+
+.popup img {
+  align-self: center; }
 
 /*# sourceMappingURL=style.css.map */
