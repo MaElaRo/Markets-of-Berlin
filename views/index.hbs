@@ -37,33 +37,29 @@
     let markerArr = []
     const markets = {{{ JSON markets }}}
     // from Alican, between forEach and markets filter, filter markets by name, compare with the value of the form
+
+
     function draw() {
       let marketsCopy = []
       for (let market in state.type) {
         if (state.type[market])
           marketsCopy = marketsCopy.concat([...markets].filter(el => el.market.marketType === market))
       }
-      //console.log(marketsCopy.length)
+
+      for (let day in state.day) {
+        if (state.day[day]) {
+          marketsCopy = marketsCopy.filter(el => {
+            const openTimes = el.openingTime;
+            const dayArray = openTimes.map(function (item) {
+              return item['day'];
+            });
+
+            if (dayArray.includes(day)) return true;
 
 
-      //for (let day in state.day) {
-      // if (state.day[day]) {
-      // console.log(state.day[day])
-
-      // marketsCopy = marketsCopy.concat([...marketsCopy].filter(el => {
-      //   const openTimes = el.openingTime;
-      //   const dayArray = openTimes.map(function (item) {
-      //    return item['day'];
-      //   });
-
-      //   if (dayArray.includes(day)) return true;
-
-
-      //  }))
-      // }
-      // }
-
-      //console.log(marketsCopy.length)
+          })
+        }
+      }
 
       marketsCopy.forEach(market => {
 
@@ -84,6 +80,7 @@
         markerArr.push(marker)
       })
     }
+
     function removeMarker() {
       markerArr.forEach(marker => marker.remove())
       markerArr = []
@@ -93,10 +90,18 @@
 
     selectType.addEventListener("change", () => {
       removeMarker()
-      for (const key in state.type) {
-        state.type[key] = false
+
+      if (selectType.value === 'Select market type') {
+        for (const key in state.type) {
+          state.type[key] = true
+        }
+      } else {
+        for (const key in state.type) {
+          state.type[key] = false
+        }
+        state.type[selectType.value] = !state.type[selectType.value]
+
       }
-      state.type[selectType.value] = !state.type[selectType.value]
       draw()
     })
 
@@ -104,14 +109,20 @@
 
 
     selectDay.addEventListener("change", () => {
-      console.log(selectDay.value)
+
 
       removeMarker()
+      if (selectDay.value === 'Select day') {
+        for (const key in state.day) {
+          state.day[key] = false
+        }
+      } else {
+
       for (const key in state.day) {
         state.day[key] = false
       }
       state.day[selectDay.value] = !state.day[selectDay.value]
-      console.log(state.day)
+      }
       draw()
     })
     draw()
